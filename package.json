@@ -2,9 +2,10 @@
   "name": "backendlibreria101",
   "version": "1.0.0",
   "main": "index.js",
-  "type" : "module",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "dev": "node --env-file .env --watch index.js"
   },
   "keywords": [
     "middlewares",
@@ -16,6 +17,9 @@
   "license": "ISC",
   "description": "Es un Backend para el proyecto de libreria 1011",
   "dependencies": {
-    "express": "^4.21.0"
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "mongoose": "^8.7.0",
+    "morgan": "^1.10.0"
   }
 }
