@@ -1,6 +1,8 @@
 import express from 'express';
 import morgan from 'morgan';
 import cors from  'cors';
+import path from 'path'
+import { fileURLToPath } from 'url';
 
 console.log('hola mundo')
 // 1-configurar un puerto
@@ -16,6 +18,9 @@ app.use(cors())//permite conecciones remotas
 app.use(morgan('dev'))//da informacion extra en la terminal
 app.use(express.json())//interpreta los datos en formato json de la solicitud 
 app.use(express.urlencoded({extended:true}))
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+app.use(express.static(path.join(__dirname,'/public')))
 
 // 3- configurar las rutas
 //http://localhost:4000/prueba
