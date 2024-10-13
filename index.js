@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import cors from  'cors';
 import path from 'path'
 import { fileURLToPath } from 'url';
+import './src/database/dbConnection.js'
 
 console.log('hola mundo')
 // 1-configurar un puerto
