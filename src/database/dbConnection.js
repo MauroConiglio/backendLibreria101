@@ -1,11 +1,11 @@
-import mongoose from "mongoose"
+import mongoose from "mongoose";
 
 const mongoDB = process.env.MONGODB;
 
 mongoose.connect(mongoDB);
 
-const conexion = mongoose.connection
+const conexion = mongoose.connection;
 
-conexion.once('open',()=>{
-    console.info('BD Conectada')
-})
+conexion.once("open", () => {
+  console.info("BD Conectada");
+});
