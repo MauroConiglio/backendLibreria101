@@ -84,3 +84,20 @@ export const borrarProducto = async (req, res) => {
       .json({ mensaje: "Ocurrio un error, no se pudo borrar el producto" });
   }
 };
+
+export const obtenerProducto = async (req,res) => {
+try {
+  const productoBuscado = await Producto.findById(req.params.id)
+
+  if(!productoBuscado){
+    return res.status(404).json({mensaje:'El producto solicitado no existe'})
+  }
+  res.status(200).json(productoBuscado)
+} catch (error) {
+  console.error(error);
+    res
+      .status(500)
+      .json({ mensaje: "Ocurrio un error, no se pudo encontrar el producto" });
+}
+}
+
